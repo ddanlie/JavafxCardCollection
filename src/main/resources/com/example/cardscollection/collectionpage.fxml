@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="731.0" prefWidth="605.0" style="-fx-background-color: #0e1e36;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cardscollection.CollectionController">
+   <children>
+      <HBox HBox.hgrow="ALWAYS">
+         <children>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" style="-fx-border-width: 0; -fx-background-color: #0e1e36;" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+               <content>
+                  <TilePane fx:id="cardsPane" nodeOrientation="LEFT_TO_RIGHT" prefColumns="0" prefHeight="660.0" prefRows="0" prefTileHeight="1.0" prefTileWidth="1.0" prefWidth="166.0" style="-fx-border-radius: 0; -fx-background-color: #0e1e36;" tileAlignment="TOP_LEFT">
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                  </TilePane>
+               </content>
+               <padding>
+                  <Insets bottom="40.0" left="40.0" top="30.0" />
+               </padding>
+            </ScrollPane>
+            <VBox spacing="20.0" style="-fx-background-color: #0e1e36;">
+               <children>
+                  <HBox fx:id="cardExplorer" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Button fx:id="cardEditButton" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#preEditCard" onMouseReleased="#editCard" style="-fx-background-color: #3d434d; -fx-background-radius: 0;" text="Edit" textFill="WHITE" />
+                              <Button fx:id="cardDeleteButton" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#preDeleteCard" onMouseReleased="#deleteCard" style="-fx-background-color: #3d434d; -fx-background-radius: 0;" text="Delete" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="560.0" prefWidth="226.0">
+                           <children>
+                              <ImageView fx:id="explorationView" fitHeight="377.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" />
+                              <TextField fx:id="cardNameField" alignment="CENTER" style="-fx-background-color: #0e1e36; -fx-text-fill: white;">
+                                 <font>
+                                    <Font name="Comic Sans MS Bold" size="40.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="30.0" top="10.0" />
+                                 </padding>
+                              </TextField>
+                              <TextArea fx:id="cardDescriptionArea" prefHeight="182.0" prefWidth="366.0" style="-fx-background-color: #0e1e36; -fx-control-inner-background: #0e1e36; -fx-background-radius: 0; -fx-border-radius: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-text-fill: white;" styleClass="rectangular-textarea">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="15.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Button fx:id="cardEditButton1" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#stopCardExplore" onMousePressed="#preEditCard" onMouseReleased="#editCard" style="-fx-background-color: #3d434d; -fx-background-radius: 0;" text="Close" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</HBox>
